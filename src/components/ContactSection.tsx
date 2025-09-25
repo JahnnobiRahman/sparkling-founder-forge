@@ -9,25 +9,25 @@ const ContactSection = () => {
     {
       icon: Mail,
       title: "Email",
-      subtitle: "hello@yourname.com",
+      subtitle: "jahnnobirahman230@gmail.com",
       description: "Best for detailed discussions and partnerships"
     },
     {
       icon: Linkedin,
       title: "LinkedIn",
-      subtitle: "@yourlinkedin",
+      subtitle: "https://www.linkedin.com/in/jahnnobi-rahman/",
       description: "Let's connect professionally"
     },
     {
-      icon: Twitter,
-      title: "Twitter",
-      subtitle: "@yourtwitter",
-      description: "Follow my journey and thoughts"
+      icon: Github,
+      title: "Github",
+      subtitle: "https://github.com/JahnnobiRahman",
+      description: "Let's connect professionally"
     },
     {
       icon: Calendar,
       title: "Schedule a Call",
-      subtitle: "calendly.com/yourname",
+      subtitle: "https://calendly.com/jahnnobi/30min",
       description: "Book a 30-minute chat"
     }
   ];
@@ -66,7 +66,7 @@ const ContactSection = () => {
                 <span className="font-medium">Currently Based</span>
               </div>
               <p className="text-muted-foreground">
-                San Francisco, CA • Open to remote collaboration worldwide
+                Dhaka,Bangladesh • Open to remote collaboration worldwide
               </p>
             </Card>
           </div>

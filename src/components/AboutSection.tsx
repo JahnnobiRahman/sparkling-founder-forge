@@ -32,8 +32,8 @@ const AboutSection = () => {
             About <span className="text-gradient-primary">Me</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            I'm a startup founder who believes in the power of technology to solve real problems. 
-            My journey has been about building products that users love and teams that thrive.
+          I'm a curious builder who loves experimenting with ideas, turning them into products people actually want, 
+          and teaming up with others to make the journey fun and meaningful.
           </p>
         </div>
 
@@ -54,7 +54,7 @@ const AboutSection = () => {
               </p>
               <p>
                 Being recognized as Forbes 30 Under 30 was humbling, but what truly drives me 
-                is the impact our products have on users' daily lives and the lessons learned 
+                is the impact our products have on users daily lives and the lessons learned 
                 along the way.
               </p>
             </div>
