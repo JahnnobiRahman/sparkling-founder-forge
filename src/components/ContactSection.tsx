@@ -51,12 +51,20 @@ const ContactSection = () => {
             <h3 className="text-2xl font-display font-semibold mb-8">Get in Touch</h3>
             <div className="grid sm:grid-cols-2 gap-6 mb-8">
               {contactMethods.map((method, index) => (
-                <Card key={index} className="glass-card p-6 hover:scale-105 transition-all duration-300 cursor-pointer">
-                  <method.icon className="h-8 w-8 text-primary mb-4" />
-                  <h4 className="font-semibold mb-1">{method.title}</h4>
-                  <p className="text-primary text-sm mb-2">{method.subtitle}</p>
-                  <p className="text-xs text-muted-foreground">{method.description}</p>
-                </Card>
+                <a 
+                  key={index} 
+                  href={method.subtitle} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="block"
+                >
+                  <Card className="glass-card p-6 hover:scale-105 transition-all duration-300 cursor-pointer">
+                    <method.icon className="h-8 w-8 text-primary mb-4" />
+                    <h4 className="font-semibold mb-1">{method.title}</h4>
+                    <p className="text-primary text-sm mb-2">{method.subtitle}</p>
+                    <p className="text-xs text-muted-foreground">{method.description}</p>
+                  </Card>
+                </a>
               ))}
             </div>
 
@@ -135,18 +143,22 @@ const ContactSection = () => {
             Thanks for visiting my portfolio. Let's build something amazing together.
           </p>
           <div className="flex justify-center space-x-6">
-            <Button variant="ghost" size="icon" className="rounded-full hover:bg-primary/20">
-              <Github className="h-5 w-5" />
-            </Button>
-            <Button variant="ghost" size="icon" className="rounded-full hover:bg-primary/20">
-              <Linkedin className="h-5 w-5" />
-            </Button>
-            <Button variant="ghost" size="icon" className="rounded-full hover:bg-primary/20">
-              <Twitter className="h-5 w-5" />
-            </Button>
-            <Button variant="ghost" size="icon" className="rounded-full hover:bg-primary/20">
-              <Mail className="h-5 w-5" />
-            </Button>
+            <a href="https://github.com/JahnnobiRahman" target="_blank" rel="noopener noreferrer">
+              <Button variant="ghost" size="icon" className="rounded-full hover:bg-primary/20">
+                <Github className="h-5 w-5" />
+              </Button>
+            </a>
+            <a href="https://www.linkedin.com/in/jahnnobi-rahman/" target="_blank" rel="noopener noreferrer">
+              <Button variant="ghost" size="icon" className="rounded-full hover:bg-primary/20">
+                <Linkedin className="h-5 w-5" />
+              </Button>
+            </a>
+            
+            <a href="mailto:jahnnobirahman230@gmail.com">
+              <Button variant="ghost" size="icon" className="rounded-full hover:bg-primary/20">
+                <Mail className="h-5 w-5" />
+              </Button>
+            </a>
           </div>
         </div>
       </div>
