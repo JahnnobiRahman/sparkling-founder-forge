@@ -13,6 +13,7 @@ export default defineConfig(() => ({
   },
   // Keep dev fast; disable heavy tagging plugin in dev
   plugins: [react()],
+  base: '/sparkling-founder-forge/', // 👈 exact repo subpath
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
