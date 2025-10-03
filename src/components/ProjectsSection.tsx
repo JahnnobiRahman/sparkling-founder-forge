@@ -2,45 +2,76 @@ import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ExternalLink, Github } from "lucide-react";
+import { useState } from "react";
 
 const ProjectsSection = () => {
   const projects = [
     {
-      title: "FinTech Platform",
-      description: "Revolutionary payment processing platform that reduced transaction fees by 40% for small businesses. Built with microservices architecture and scaled to process $100M+ in transactions.",
-      tech: ["React", "Node.js", "PostgreSQL", "AWS"],
+      title: "Relaxy : ChatGPT for mental wellness",
+      description: "South Asia’s first AI-human hybrid mental health platform making care accessible, affordable, and stigma-free.",
+      tech: ["Flutter (Dart)", "React/Next.js (TypeScript)", "NestJS (Node.js + TypeScript)", "REST + GraphQL", "MongoDB"],
       metrics: [
-        { label: "Users", value: "50K+" },
-        { label: "Transactions", value: "$100M+" },
-        { label: "Uptime", value: "99.9%" }
+        { label: "Users", value: "150K+" },
+        { label: "Subscribers", value: "52K+" },
+        { label: "NPS Score", value: "8.5" },
+        { label: "Day 01 Retention", value: "82%" }
       ],
       status: "Live",
-      category: "Featured"
+      category: "Featured",
+      liveUrl: "https://session.relaxy.com.bd/",
+      codeUrl: undefined,
     },
     {
-      title: "AI-Powered Analytics",
-      description: "Machine learning platform that helps e-commerce businesses optimize their inventory and predict demand. Increased forecast accuracy by 65% for our clients.",
-      tech: ["Python", "TensorFlow", "React", "FastAPI"],
+      title: "Riri : The AI Therapist",
+      description: "Culturally trained AI companion that understands moods, behaviors, and triggers to deliver instant, personalized clinical therapist like mental health support",
+      tech: ["PyTorch + Hugging Face Transformers " , "RLHF-tuned LLMs via LangChain & LangGraph (multi-agent orchestration)", "FastAPI", "AWS (ECS/Fargate or EKS, API Gateway", "Prometheus"],
       metrics: [
-        { label: "Accuracy", value: "65%" },
-        { label: "Clients", value: "200+" },
-        { label: "Data Points", value: "1M+" }
+        { label: "NPS Score", value: "9.3" },
+        { label: "Average Engagement/Session ", value: "18 hours/week" },
+        { label: "Total Completed Sessions", value: "18K in 2 months" },
+        { label: "User-reported Performance Satisfaction", value: "4X better than chatGPT" }
       ],
       status: "Live",
-      category: "AI/ML"
+      category: "AI/ML",
+      liveUrl: "https://riri.relaxy.com.bd/",
+      codeUrl: undefined,
     },
     {
-      title: "Healthcare SaaS",
-      description: "HIPAA-compliant telemedicine platform connecting patients with specialists. Reduced average consultation wait time from weeks to hours.",
-      tech: ["Vue.js", "Django", "Redis", "WebRTC"],
+      title: "SkillFusion Academy",
+      description: "Trians Immigrants to land tech-jobs in US & Canada ",
+      tech: ["Vue.js", "Django", "Redis"],
       metrics: [
         { label: "Consultations", value: "25K+" },
-        { label: "Wait Time", value: "2 hours" },
         { label: "Satisfaction", value: "4.9/5" }
       ],
-      status: "Live",
-      category: "Healthcare"
-    }
+      category: "Ed-tech",
+      liveUrl: "https://www.linkedin.com/company/skillfusionacademy/posts/?feedView=all",
+      codeUrl: undefined,
+    },
+
+    {
+      title: "Captain Earth : Soft-skill Building Platform",
+      description: "A digital soft-skill building platform designed to support students with accessible interventions, behavioral design, and evidence-based models.",
+      tech: ["React", "Firebase", "Node.js", "Figma"],
+      metrics: [
+        { label: "Users Acquired", value: "1,000+" },
+        { label: "Grant Funding", value: "BDT 1M" },
+        { label: "Focus", value: "Behavioral Models (Hooked, Fogg)" }
+      ],
+      status: "Pilot",
+      category: "Healthcare / Ed-Tech",
+      liveUrl: "https://www.facebook.com/watch/?v=851713635649307" // replace with actual if you have one
+    },
+    
+
+    {
+      title: "Bangla Therapy ChatBot",
+      description: "A Streamlit-based chatbot application that provides therapeutic conversations in Bangla using the llama-3.2-3b-instruct model through LM Studio. ",
+      tech: ["Python", "POSTgreSQL", "LM Studio", "Streamlit"],
+      metrics: [],
+      category: "Healthcare",
+      codeUrl: "https://github.com/JahnnobiRahman/bangla-therapy-chatbot",
+    },
   ];
 
   return (
@@ -56,8 +87,13 @@ const ProjectsSection = () => {
           </p>
         </div>
 
+        {(() => {
+          const [showAll, setShowAll] = useState(false);
+          const items = showAll ? projects : projects.slice(0, 3);
+          return (
+        <>
         <div className="space-y-8">
-          {projects.map((project, index) => (
+          {items.map((project, index) => (
             <Card key={index} className="glass-card p-8 hover:scale-[1.02] transition-all duration-300">
               <div className="grid lg:grid-cols-3 gap-8">
                 {/* Project Details */}
@@ -67,15 +103,17 @@ const ProjectsSection = () => {
                     <Badge className="bg-primary/20 text-primary border-primary/30">
                       {project.category}
                     </Badge>
-                    <Badge 
-                      className={`${
-                        project.status === 'Live' 
-                          ? 'bg-green-500/20 text-green-400 border-green-500/30' 
-                          : 'bg-gold/20 text-gold border-gold/30'
-                      }`}
-                    >
-                      {project.status}
-                    </Badge>
+                    {project.status && (
+                      <Badge 
+                        className={`${
+                          project.status === 'Live' 
+                            ? 'bg-green-500/20 text-green-400 border-green-500/30' 
+                            : 'bg-gold/20 text-gold border-gold/30'
+                        }`}
+                      >
+                        {project.status}
+                      </Badge>
+                    )}
                   </div>
                   
                   <p className="text-muted-foreground mb-6 text-lg leading-relaxed">
@@ -91,39 +129,53 @@ const ProjectsSection = () => {
                   </div>
                   
                   <div className="flex gap-3">
-                    <Button className="btn-premium rounded-full">
-                      <ExternalLink className="w-4 h-4 mr-2" />
-                      View Live
-                    </Button>
-                    <Button variant="outline" className="rounded-full border-card-border">
-                      <Github className="w-4 h-4 mr-2" />
-                      Code
-                    </Button>
+                    {project.liveUrl && (
+                      <Button className="btn-premium rounded-full" asChild>
+                        <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
+                          <ExternalLink className="w-4 h-4 mr-2" />
+                          View Live
+                        </a>
+                      </Button>
+                    )}
+                    {project.codeUrl && (
+                      <Button variant="outline" className="rounded-full border-card-border" asChild>
+                        <a href={project.codeUrl} target="_blank" rel="noopener noreferrer">
+                          <Github className="w-4 h-4 mr-2" />
+                          Code
+                        </a>
+                      </Button>
+                    )}
                   </div>
                 </div>
                 
                 {/* Metrics */}
-                <div className="space-y-4">
-                  <h4 className="font-semibold text-lg mb-4">Key Metrics</h4>
-                  {project.metrics.map((metric, metricIndex) => (
-                    <div key={metricIndex} className="bg-background/50 rounded-lg p-4">
-                      <div className="text-2xl font-bold text-gradient-primary mb-1">
-                        {metric.value}
+                {project.metrics && project.metrics.length > 0 && (
+                  <div className="space-y-4">
+                    <h4 className="font-semibold text-lg mb-4">Key Metrics</h4>
+                    {project.metrics.map((metric, metricIndex) => (
+                      <div key={metricIndex} className="bg-background/50 rounded-lg p-4">
+                        <div className="text-2xl font-bold text-gradient-primary mb-1">
+                          {metric.value}
+                        </div>
+                        <div className="text-sm text-muted-foreground">{metric.label}</div>
                       </div>
-                      <div className="text-sm text-muted-foreground">{metric.label}</div>
-                    </div>
-                  ))}
-                </div>
+                    ))}
+                  </div>
+                )}
               </div>
             </Card>
           ))}
         </div>
-
-        <div className="text-center mt-12">
-          <Button className="btn-premium text-lg px-8 py-4 rounded-full">
-            View All Projects
-          </Button>
-        </div>
+        {projects.length > 3 && (
+          <div className="text-center mt-12">
+            <Button className="btn-premium text-lg px-8 py-4 rounded-full" onClick={() => setShowAll(!showAll)}>
+              {showAll ? "Show Less" : "View All Projects"}
+            </Button>
+          </div>
+        )}
+        </>
+          );
+        })()}
       </div>
     </section>
   );
