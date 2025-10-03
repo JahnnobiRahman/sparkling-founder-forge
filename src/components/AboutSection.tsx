@@ -3,24 +3,24 @@ import { Card } from "@/components/ui/card";
 const AboutSection = () => {
   const achievements = [
     {
-      title: "Forbes 30 Under 30",
-      description: "Recognized for entrepreneurial excellence and innovation",
+      title: "Forbes 30 Under 30 Asia",
+      description: "Honored in the Social Impact category for mental health innovation",
       icon: "🏆"
     },
     {
-      title: "Multiple Products Launched",
-      description: "Successfully brought 5+ products from idea to market",
-      icon: "🚀"
+      title: "Funding & Partnerships",
+      description: "Raised venture funding and partnered with Bangladesh's largest telecom brands to reach 120M+ users",
+      icon: "💰"
     },
     {
       title: "Team Leadership",
-      description: "Built and led cross-functional teams of 20+ members",
+      description: "Built and led cross-functional teams across product, engineering, design, and clinical experts",
       icon: "👥"
     },
     {
-      title: "Funding Raised",
-      description: "Secured significant funding rounds for growth",
-      icon: "💰"
+      title: "Global Recognition",
+      description: "Represented Bangladesh at UNICEF, One Young World , Accelerating Asia, and MIT Bootcamp as a young founder",
+      icon: "🌍"
     }
   ];
 
@@ -28,7 +28,7 @@ const AboutSection = () => {
     <section id="about" className="py-24 px-6">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-display font-bold mb-6">
+          <h2 className="text-4xl md:text-5xl font-display font-bold mb-4">
             About <span className="text-gradient-primary">Me</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">

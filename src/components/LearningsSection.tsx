@@ -131,7 +131,7 @@ const LearningsSection = () => {
             Key <span className="text-gradient-gold">Learnings</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Built from 0→1 and scaled 1→10: here are the principles—and proofs—that now guide how I build products and lead teams.
+            Built from 0→1 and scaled 1→10 : here are the principles and proofs that now guide how I build products and lead teams.
           </p>
         </div>
 
@@ -197,7 +197,7 @@ const LearningsSection = () => {
         </div>
         {learnings.length > 3 && (
           <div className="text-center mt-8">
-            <Button className="btn-premium rounded-full px-8" onClick={() => setShowAll(!showAll)}>
+            <Button className="btn-premium text-lg px-8 py-4 rounded-full" onClick={() => setShowAll(!showAll)}>
               {showAll ? "Show less" : "View more"}
             </Button>
           </div>
