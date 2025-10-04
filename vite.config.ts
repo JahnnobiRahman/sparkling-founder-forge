@@ -7,6 +7,6 @@ export default defineConfig({
   plugins: [react()],
   base: "/sparkling-founder-forge/",
   resolve: {
-    alias: { "@": path.resolve(__dirname, "src") } // 👈
+     alias: { "@": new URL("./src", import.meta.url).pathname }  // 👈
   }
 });
