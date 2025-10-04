@@ -1,15 +1,21 @@
 {
+  "files": [],
+  "references": [
+    { "path": "./tsconfig.node.json" }
+  ],
   "compilerOptions": {
     "jsx": "react-jsx",
-    "jsxImportSource": "react",   // 👈 required when using SWC JSX runtime
-    "moduleResolution": "node",
     "module": "ESNext",
     "target": "ESNext",
     "lib": ["DOM", "ESNext"],
+    "moduleResolution": "Bundler",
     "esModuleInterop": true,
     "skipLibCheck": true,
     "strict": true,
     "baseUrl": ".",
-    "paths": { "@/*": ["src/*"] },
+    "paths": {
+      "@/*": ["src/*"]
+    },
+    "types": ["node"]
   }
 }
