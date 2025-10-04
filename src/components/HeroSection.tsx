@@ -2,6 +2,8 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ArrowDown, Github, Linkedin, Mail } from "lucide-react";
 import heroBackground from "@/assets/hero-background.jpg";
+import me from "@/assets/me.jpg";
+
 
 const HeroSection = () => {
   const scrollToSection = (sectionId: string) => {
@@ -23,8 +25,8 @@ const HeroSection = () => {
           {/* Avatar */}
           <div className="fade-in fade-in-delay-2 mt-4 md:mt-6 mb-6 flex justify-center">
           <img
-            src="/me.jpg"
-            alt="Your Name"
+            src={me}
+            alt="Me"
             className="h-24 w-24 md:h-28 md:w-28 rounded-full object-cover ring-2 ring-primary/30 shadow-lg"
           />
         </div>
