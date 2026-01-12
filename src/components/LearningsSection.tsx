@@ -12,28 +12,29 @@ import {
 import { Button } from "@/components/ui/button";
 
 const LearningsSection = () => {
+  const [showAll, setShowAll] = useState(false);
   const learnings = [
     {
-      title: "Adoption Without Revenue Isn’t Success",
+      title: "Adoption Without Revenue Isn't Success",
       insight:
-        "Early traction can feel like validation, but if no one pays, you don’t have a business, you have a hobby."
+        "Early traction can feel like validation, but if no one pays, you don't have a business, you have a hobby.",
       story:
-        "Our first game hit 1,000+ users in 3 days. Exciting, but not a cent in revenue. We’d optimized for excitement, not economics. That experience reset my instincts toward value creation over vanity metrics.",
+        "Our first game hit 1,000+ users in 3 days. Exciting, but not a cent in revenue. We'd optimized for excitement, not economics. That experience reset my instincts toward value creation over vanity metrics.",
       category: "Product-Market-Fit",
       impact:
-        "Now I probe willingness to pay during discovery and treat downloads as vanity until conversion proves value."
+        "Now I probe willingness to pay during discovery and treat downloads as vanity until conversion proves value.",
       details:
-        "Current approach: (1) price testing in interviews, (2) pre-order/paywall smoke tests, (3) monetization dashboard (activation → conversion → retention → ARPU), (4) kill ideas that don’t move the North Star."
+        "Current approach: (1) price testing in interviews, (2) pre-order/paywall smoke tests, (3) monetization dashboard (activation → conversion → retention → ARPU), (4) kill ideas that don't move the North Star."
     },
     {
-      title: "Safety by Design (Riri’s Self-Harm Protocol)",
+      title: "Safety by Design (Riri's Self-Harm Protocol)",
       insight:
-        "Responsible AI is a product requirement, not a nice-to-have. Especially in mental health."
+        "Responsible AI is a product requirement, not a nice-to-have. Especially in mental health.",
       story:
         "I coded, tested, and debugged myself the self-harm safety protocol for Riri (24/7 AI therapist). I coded alongside AI engineers while partnering with psychiatrists and clinical researchers. We built tiered fallbacks, escalation paths, and legal/ethical guardrails.",
       category: "Trust & Safety",
       impact:
-        "Shipped a clinically credible, compliant experience that users trust (9.3 NPS, 200K+ sessions in 2 months)."
+        "Shipped a clinically credible, compliant experience that users trust (9.3 NPS, 200K+ sessions in 2 months).",
       details:
         "What worked: red flag classifiers + human-in-the-loop, geo-aware resources, idempotent fallbacks, auditable logs, and clear UX for crisis routing. Result: safer interactions and reduced risk for the business."
     },
@@ -135,13 +136,8 @@ const LearningsSection = () => {
           </p>
         </div>
 
-        {(() => {
-          const [showAll, setShowAll] = useState(false);
-          const items = showAll ? learnings : learnings.slice(0, 4);
-          return (
-        <>
         <div className="grid md:grid-cols-2 gap-8">
-          {items.map((learning, index) => (
+          {(showAll ? learnings : learnings.slice(0, 4)).map((learning, index) => (
             <Dialog key={index}>
               <DialogTrigger asChild>
                 <Card className="glass-card p-8 h-full hover:scale-[1.02] transition-all duration-300 cursor-pointer">
@@ -202,9 +198,6 @@ const LearningsSection = () => {
             </Button>
           </div>
         )}
-        </>
-          );
-        })()}
 
         <Card className="glass-card p-8 mt-12 text-center">
           <h3 className="text-2xl font-display font-semibold mb-4">
