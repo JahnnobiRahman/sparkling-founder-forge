@@ -16,6 +16,78 @@ const LearningsSection = () => {
   const [showAll, setShowAll] = useState(false);
   const learnings = [
     {
+      title: "Your Metrics Will Lie to You Politely",
+      insight:
+        "A score can go up while the experience gets worse. Read the transcripts, not just the dashboard.",
+      story:
+        "For my EvoRiri paper, I used a genetic algorithm to tune a Bangla, Banglish, and English mental health assistant against scores for empathy, safety, and structure. The fitness number climbed from 0.556 to 0.703. It looked like a win. Then I read the traces and found responses that were all questions, responses stuffed with empathy markers, and responses cut off mid-thought.",
+      category: "Research",
+      impact:
+        "The gain came down to a single structure-weight threshold, and plain random search did just as well. Humbling, and exactly the point.",
+      details:
+        "What I carry into product work: (1) inspect individual outputs, not only the aggregates, (2) assume any proxy for empathy can be gamed, (3) run an ablation before crediting the clever method, (4) always compare against a simple baseline. The study was a diagnostic case study on synthetic single-turn prompts, not clinical validation or proof of an optimisation advantage."
+    },
+    {
+      title: "Stigma Is a Design Problem",
+      insight:
+        "If your product feels like a diagnosis, the people who need it most will never open it.",
+      story:
+        "Stigma is one of the biggest obstacles for mental health startups in Bangladesh, so we positioned Relaxy as a lifestyle product for well-being, not a treatment service. As I told ExitStack, “We never wanted Relaxy to feel like a sad or clinical space.” We ran a Bengali theme song and personality quizzes based on Bengali fiction characters.",
+      category: "Brand & Positioning",
+      impact:
+        "4.5M+ combined reach across six campaigns, with people talking about mental health who would never have searched for it.",
+      details:
+        "What worked: meet people in culture before asking them to talk about feelings, make the first step playful and private, and let the clinical depth appear once someone is ready for it. Nobody wakes up wanting therapy. They might wake up wanting to know which fictional character they are."
+    },
+    {
+      title: "Speed Is Part of the Care",
+      insight:
+        "When someone finally asks for help, “we have a slot in two weeks” is a clinical failure, not a scheduling detail.",
+      story:
+        "I know the wait first-hand: appointments were often months away, and finding the right specialist was its own project. So we built Relaxy around that gap, pairing 24/7 AI support with psychologists and psychiatrists available to book by call or chat.",
+      category: "Product Strategy",
+      impact:
+        "Reduced wait times from 13 days to 30 seconds and made support 50% more affordable.",
+      details:
+        "The principle: find the moment the old system fails, then design for that moment. Riri answers immediately, and a human professional is there when someone needs one. Convenience here isn't a nice feature. It decides whether a person gets support at all."
+    },
+    {
+      title: "Translation Isn't Localization",
+      insight:
+        "People don't type their feelings in textbook language. They type the way they talk to friends.",
+      story:
+        "Our users write in Bangla and Banglish, often in the same sentence. Riri had to respond in that register instead of sounding like a polite pamphlet. Expanding into Myanmar and Indonesia meant adapting the product, the conversational AI, and the go-to-market strategy for each language and culture, not swapping out strings.",
+      category: "Global Expansion",
+      impact:
+        "Riri now supports Bangla, Banglish, English, and Burmese. One user's review: “riri বেটার (better) than chatgpt.” I'll take it.",
+      details:
+        "What changes per market: language register, cultural references, what is safe to say about family and relationships, and how people pay. What stays constant: privacy, clinical safety, and the feeling of being understood."
+    },
+    {
+      title: "AI Should Augment Care, Not Replace It",
+      insight:
+        "The goal isn't to replace therapists. It's to make sure nobody faces their worst night with no one there.",
+      story:
+        "Riri maps emotions, risks, behaviors, relationships, goals, and coping strategies to personalize support and spot risks before they escalate. But we built it as AI plus human therapists, with clinician-reviewed responses and access to real professionals.",
+      category: "Responsible AI",
+      impact:
+        "400K+ AI-human conversations at a 9.4 NPS, with a 200+ strong mental health expert pool behind the product.",
+      details:
+        "Guardrails we hold to: clinician review of AI responses, HIPAA-inspired data governance, 24/7 crisis support, and a clear route from AI to a human. It's also why I joined Women for Ethical AI's South Asian Chapter: how we build these systems matters as much as whether they work."
+    },
+    {
+      title: "The Room Isn't Always Level",
+      insight:
+        "There are no shortcuts. Some founders just have to walk further to get to the same table.",
+      story:
+        "I've said it publicly: investor bias favors male founders, and I felt that personally. Building a team with a shared vision took work too, especially aligning people on values and being clear about each person's role. What kept me going was feeling responsible for the people who needed this to exist.",
+      category: "Founder Life",
+      impact:
+        "Built the products, pitched the room, and won backing from institutional and angel investors anyway.",
+      details:
+        "What I'd tell another young woman building in this field: do the work, know your numbers cold, choose people who share your values, and don't wait for the room to get fairer before you walk in."
+    },
+    {
       title: "Adoption Without Revenue Isn't Success",
       insight:
         "Early traction can feel like validation, but if no one pays, you don't have a business, you have a hobby.",
@@ -37,19 +109,19 @@ const LearningsSection = () => {
       impact:
         "Shipped a clinically credible, compliant experience that users trust (9.4 NPS).",
       details:
-        "What worked: red flag classifiers + human-in-the-loop, geo-aware resources, idempotent fallbacks, auditable logs, and clear UX for crisis routing. Result: safer interactions and reduced risk for the business."
+        "What worked: red flag classifiers + human-in-the-loop, geo-aware resources, idempotent fallbacks, auditable logs, and clear UX for crisis routing. Community safety mattered too: posts flagged for suicide risk are routed to hotline partners like Kaan Pete Roi, and community members reach out to people sharing distress. Result: safer interactions and reduced risk for the business."
     },
     {
       title: "Partnerships Are Distribution Engines",
       insight:
         "The right partners can shortcut years of acquisition work if the value exchange is clear.",
       story:
-        "We partnered with Grameenphone & Robi—Bangladesh’s largest telcos to reach new audiences via carrier integrations and co-marketing.",
+        "We partnered with Grameenphone & Robi, Bangladesh’s largest telcos, to reach new audiences via carrier integrations and co-marketing. Bringing Relaxy into bKash and letting people talk to Riri inside the MyGP app put us where people already were, instead of asking them to come find us.",
       category: "GTM / Partnerships",
       impact:
         "Extended access to 56M+ young people; adoption grew ~40% and subscribers passed 90K+.",
       details:
-        "Playbook: (1) shared goals & success metrics, (2) lightweight billing & identity flows, (3) co-branded education, (4) channel-specific pricing experiments, (5) joint dashboards to keep incentives aligned."
+        "Playbook: (1) shared goals & success metrics, (2) lightweight billing & identity flows, (3) co-branded education, (4) channel-specific pricing experiments, (5) joint dashboards to keep incentives aligned. The same logic now powers our B2B work: corporate wellness and training for teams at companies like Beximco Pharma and Shanta Holdings."
     },
     {
       title: "Fail Fast, Learn Faster",
@@ -116,7 +188,7 @@ const LearningsSection = () => {
       insight:
         "Adoption and retention are built through timely, relevant, multi-channel nudges.",
       story:
-        "We treated lifecycle like a feature set, not just campaigns: onboarding education, habit loops, and win-back paths.",
+        "We treated lifecycle like a feature set, not just campaigns: onboarding education, habit loops, and win-back paths. Users went from averaging two sessions over their lifetime to four or five.",
       category: "Growth",
       impact:
         "400K+ users, 90K+ subscribers, and 8.5 NPS supported by consistent lifecycle touchpoints.",

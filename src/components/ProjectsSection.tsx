@@ -24,7 +24,7 @@ const ProjectsSection = () => {
       product: {
         name: "Riri",
         description:
-          "Relaxy's 24/7 AI therapy assistant. Riri remembers your triggers and patterns, connecting emotions, risks, behaviors, relationships, goals, and coping strategies to personalize support and spot risks before they escalate. She speaks Bangla, Banglish, and Burmese. Her responses are clinician-reviewed, and she augments therapists rather than replacing them. Also the subject of my research, because she deserved peer review.",
+          "Relaxy's 24/7 AI therapy assistant. Riri remembers your triggers and patterns, connecting emotions, risks, behaviors, relationships, goals, and coping strategies to personalize support and spot risks before they escalate. She speaks Bangla, Banglish, English, and Burmese. Her responses are clinician-reviewed, and she augments therapists rather than replacing them. Also the subject of my research, because she deserved peer review.",
         metrics: [
           { label: "AI-human conversations", value: "400K+" },
           { label: "NPS", value: "9.4" },
