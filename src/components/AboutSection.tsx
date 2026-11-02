@@ -1,117 +1,67 @@
-import { Card } from "@/components/ui/card";
+import SectionHeading from "@/components/SectionHeading";
 
 const AboutSection = () => {
-  const achievements = [
+  const values = [
     {
-      title: "Forbes 30 Under 30 Asia",
-      description: "Honored in the 2023 Social Impact category for mental health innovation",
-      icon: "🏆"
+      title: "Users first",
+      description: "Every decision starts with what people actually need, not what looked good in the deck.",
     },
     {
-      title: "Funding & Partnerships",
-      description: "Raised venture funding and partnered with Grameenphone and Robi to extend access to 56M+ young people",
-      icon: "💰"
+      title: "Move fast",
+      description: "Speed, with thinking attached. The second part is the one people skip.",
     },
     {
-      title: "Team Leadership",
-      description: "Built and led cross-functional teams across product, engineering, design, and clinical experts",
-      icon: "👥"
+      title: "Build together",
+      description: "Great products come from great teams. The lone genius is mostly a marketing strategy.",
     },
-    {
-      title: "Global Recognition",
-      description: "Represented Bangladesh at UNICEF, One Young World , Accelerating Asia, and MIT Bootcamp as a young founder",
-      icon: "🌍"
-    },
-    {
-      title: "Peer-Reviewed Research",
-      description: "EvoRiri paper on diagnosing reward-design failures in a Bangla mental-health assistant, accepted in Mathematics (MDPI)",
-      icon: "📄"
-    },
-    {
-      title: "Ethical AI",
-      description: "Member of Women for Ethical AI's South Asian Chapter, addressing gender bias in AI systems and data",
-      icon: "⚖️"
-    }
   ];
 
   return (
     <section id="about" className="py-24 px-6">
-      <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-display font-bold mb-4">
-            About <span className="text-gradient-primary">Me</span>
-          </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-          I'm a curious builder who loves experimenting with ideas, turning them into products people actually want, 
-          and teaming up with others to make the journey fun and meaningful.
-          </p>
-        </div>
+      <div className="max-w-6xl mx-auto">
+        <SectionHeading
+          numeral="I"
+          title="About"
+          aside="A curious builder who turns ideas into things people actually want, and has opinions about the rest."
+        />
 
-        <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
-          <div>
-            <h3 className="text-2xl font-display font-semibold mb-6">My Story</h3>
-            <div className="space-y-4 text-lg text-muted-foreground">
-              <p>
-                Starting my entrepreneurial journey at 19, I've always been driven by the belief 
-                that great products come from understanding real user problems. What began as 
-                curiosity about how things work evolved into a passion for building solutions 
-                that scale.
-              </p>
-              <p>
-                Over the years, I've had the privilege of working with incredible teams, 
-                learning from failures, celebrating wins, and most importantly, understanding 
-                that product development is as much about people as it is about technology.
-              </p>
-              <p>
-                Being recognized as Forbes 30 Under 30 was humbling, but what truly drives me 
-                is the impact our products have on users daily lives and the lessons learned 
-                along the way.
-              </p>
-              <p>
-                Today I lead Relaxy, an AI-driven mental health platform with 400,000+ users
-                and 90,000+ paying subscribers, and I'm focused on the strategic and governance
-                foundations needed to scale AI responsibly.
-              </p>
-            </div>
+        <div className="grid lg:grid-cols-3 gap-14">
+          <div className="lg:col-span-2 space-y-5 text-xl leading-relaxed text-muted-foreground">
+            <p>
+              I started my entrepreneurial journey at 19, armed with one belief: great products come
+              from understanding real problems. What began as curiosity about how things work became
+              a career building solutions that scale.
+            </p>
+            <p>
+              Since then I've worked with incredible teams, learned from failures, celebrated wins,
+              and discovered that product development is as much about people as technology. This is
+              inconvenient for someone who studied computer science, but here we are.
+            </p>
+            <p>
+              Forbes 30 Under 30 Asia was humbling. Briefly. What actually drives me is the impact
+              our products have on people's daily lives.
+            </p>
+            <p>
+              These days I lead Relaxy and focus on the strategic and governance foundations needed
+              to scale AI responsibly, because “move fast and break things” reads differently when
+              the thing is someone's mental health.
+            </p>
           </div>
-          
-          <div className="grid grid-cols-2 gap-4">
-            {achievements.map((achievement, index) => (
-              <Card key={index} className="glass-card p-6 text-center hover:scale-105 transition-transform">
-                <div className="text-3xl mb-3">{achievement.icon}</div>
-                <h4 className="font-semibold mb-2">{achievement.title}</h4>
-                <p className="text-sm text-muted-foreground">{achievement.description}</p>
-              </Card>
-            ))}
-          </div>
-        </div>
 
-        <Card className="glass-card p-8">
-          <h3 className="text-2xl font-display font-semibold mb-6 text-center">Core Values</h3>
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="text-center">
-              <div className="w-16 h-16 bg-gradient-to-br from-primary to-primary-glow rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-2xl">🎯</span>
-              </div>
-              <h4 className="font-semibold mb-2">User-Centric</h4>
-              <p className="text-muted-foreground">Every decision starts with understanding user needs and pain points</p>
+          <aside>
+            <h3 className="text-2xl font-display font-medium border-b border-border pb-2 mb-6">
+              House Rules
+            </h3>
+            <div className="space-y-6">
+              {values.map((value) => (
+                <div key={value.title}>
+                  <h4 className="text-xl font-medium">{value.title}</h4>
+                  <p className="text-lg text-muted-foreground">{value.description}</p>
+                </div>
+              ))}
             </div>
-            <div className="text-center">
-              <div className="w-16 h-16 bg-gradient-to-br from-gold to-gold-glow rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-2xl">⚡</span>
-              </div>
-              <h4 className="font-semibold mb-2">Move Fast</h4>
-              <p className="text-muted-foreground">Speed of execution combined with thoughtful iteration</p>
-            </div>
-            <div className="text-center">
-              <div className="w-16 h-16 bg-gradient-to-br from-primary to-primary-glow rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-2xl">🤝</span>
-              </div>
-              <h4 className="font-semibold mb-2">Build Together</h4>
-              <p className="text-muted-foreground">Great products are built by great teams working in harmony</p>
-            </div>
-          </div>
-        </Card>
+          </aside>
+        </div>
       </div>
     </section>
   );

@@ -10,6 +10,7 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
+import SectionHeading from "@/components/SectionHeading";
 
 const LearningsSection = () => {
   const [showAll, setShowAll] = useState(false);
@@ -31,10 +32,10 @@ const LearningsSection = () => {
       insight:
         "Responsible AI is a product requirement, not a nice-to-have. Especially in mental health.",
       story:
-        "I coded, tested, and debugged myself the self-harm safety protocol for Riri (24/7 AI therapist). I coded alongside AI engineers while partnering with psychiatrists and clinical researchers. We built tiered fallbacks, escalation paths, and legal/ethical guardrails.",
+        "I coded, tested, and debugged myself the self-harm safety protocol for Riri (our 24/7 AI companion). I coded alongside AI engineers while partnering with psychiatrists and clinical researchers. We built tiered fallbacks, escalation paths, and legal/ethical guardrails.",
       category: "Trust & Safety",
       impact:
-        "Shipped a clinically credible, compliant experience that users trust (9.3 NPS, 200K+ sessions in 2 months).",
+        "Shipped a clinically credible, compliant experience that users trust (9.4 NPS).",
       details:
         "What worked: red flag classifiers + human-in-the-loop, geo-aware resources, idempotent fallbacks, auditable logs, and clear UX for crisis routing. Result: safer interactions and reduced risk for the business."
     },
@@ -125,22 +126,19 @@ const LearningsSection = () => {
   ];
 
   return (
-    <section id="learnings" className="py-24 px-6 bg-background-secondary">
-      <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-display font-bold mb-6">
-            Key <span className="text-gradient-gold">Learnings</span>
-          </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Built from 0→1 and scaled 1→10: here are the principles and proofs that now guide how I build products and lead teams.
-          </p>
-        </div>
+    <section id="learnings" className="py-24 px-6">
+      <div className="max-w-6xl mx-auto">
+        <SectionHeading
+          numeral="V"
+          title="Lessons Learned"
+          aside="Tuition paid in full, mostly in mistakes. You may have these for free."
+        />
 
         <div className="grid md:grid-cols-2 gap-8">
           {(showAll ? learnings : learnings.slice(0, 4)).map((learning, index) => (
             <Dialog key={index}>
               <DialogTrigger asChild>
-                <Card className="glass-card p-8 h-full hover:scale-[1.02] transition-all duration-300 cursor-pointer">
+                <Card className="glass-card p-8 h-full hover:border-primary transition-colors cursor-pointer">
                   <div className="flex items-center gap-3 mb-4">
                     <Badge className="bg-gold/20 text-gold border-gold/30">
                       {learning.category}
@@ -150,19 +148,19 @@ const LearningsSection = () => {
                     {learning.title}
                   </h3>
                   <div className="space-y-4">
-                    <div className="bg-primary/10 border-l-4 border-primary p-4 rounded-r-lg">
-                      <p className="text-primary font-medium italic">
+                    <div className="bg-primary/10 border-l-4 border-primary p-4 ">
+                      <p className="text-primary italic text-lg">
                         “{learning.insight}”
                       </p>
                     </div>
-                    <p className="text-muted-foreground leading-relaxed">
+                    <p className="text-lg text-muted-foreground leading-relaxed">
                       {learning.story}
                     </p>
                     <div className="bg-background/50 rounded-lg p-4 flex items-center justify-between">
                       <p className="text-sm font-medium text-foreground">
                         <span className="text-gold">Impact:</span> {learning.impact}
                       </p>
-                      <Button variant="outline" className="rounded-full border-card-border">
+                      <Button variant="outline" className="shrink-0 ml-3 border-card-border">
                         Read more
                       </Button>
                     </div>
@@ -182,7 +180,7 @@ const LearningsSection = () => {
                     <span className="text-gold font-medium">Impact:</span> {learning.impact}
                   </p>
                   {learning.details && (
-                    <div className="prose prose-invert max-w-none text-sm leading-relaxed">
+                    <div className="max-w-none text-sm leading-relaxed">
                       {learning.details}
                     </div>
                   )}
@@ -193,20 +191,15 @@ const LearningsSection = () => {
         </div>
         {learnings.length > 3 && (
           <div className="text-center mt-8">
-            <Button className="btn-premium text-lg px-8 py-4 rounded-full" onClick={() => setShowAll(!showAll)}>
-              {showAll ? "Show less" : "View more"}
+            <Button className="btn-premium text-lg px-8 py-4" onClick={() => setShowAll(!showAll)}>
+              {showAll ? "Enough wisdom" : "More expensive lessons"}
             </Button>
           </div>
         )}
 
-        <Card className="glass-card p-8 mt-12 text-center">
-          <h3 className="text-2xl font-display font-semibold mb-4">
-            My Product Development Philosophy
-          </h3>
-          <p className="text-lg text-muted-foreground max-w-4xl mx-auto leading-relaxed">
-            Great products start with human understanding, are refined through evidence, and scaled with discipline.
-          </p>
-        </Card>
+        <blockquote className="text-2xl md:text-3xl italic text-center max-w-4xl mx-auto mt-16">
+          Great products start with human understanding, are refined through evidence, and scaled with discipline.
+        </blockquote>
       </div>
     </section>
   );

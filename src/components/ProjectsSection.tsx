@@ -1,222 +1,173 @@
-import { Card } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
 import { ExternalLink, Github } from "lucide-react";
-import { useState } from "react";
+import SectionHeading from "@/components/SectionHeading";
 
 const ProjectsSection = () => {
-  const [showAll, setShowAll] = useState(false);
-
-  const projects = [
+  const work = [
     {
-      title: "Relaxy : ChatGPT for Mental Wellness",
+      company: "Relaxy",
+      role: "CEO & Product Lead",
+      period: "Jun 2022 – Present",
+      location: "Singapore & Bangladesh",
+      aside: "It turns out “how are you, really?” scales.",
       description:
-        "An AI-human hybrid mental health platform making care accessible, affordable, and stigma-free for 600M South Asian Youth.",
-      tech: [
-        "Flutter (Dart)",
-        "React/Next.js (TypeScript)",
-        "REST + GraphQL",
-        "MongoDB",
+        "An AI-driven mental health platform making care accessible, affordable, and stigma-free for South Asian youth.",
+      highlights: [
+        "Built and scaled the platform to 400,000+ users and 90,000+ paid subscribers",
+        "Partnered with Grameenphone and Robi, Bangladesh's largest telecom operators, extending access to 56M+ young people",
+        "Led expansion into Myanmar and Indonesia, adapting the product, its conversational AI, and go-to-market strategy for each language and culture",
       ],
       metrics: [
         { label: "Users", value: "400K+" },
-        { label: "Paid Subscribers", value: "90K+" },
-        { label: "NPS Score", value: "8.5" },
-        { label: "Day 01 Retention", value: "82%" },
+        { label: "Paid subscribers", value: "90K+" },
+        { label: "NPS", value: "8.5" },
+        { label: "Day 1 retention", value: "82%" },
       ],
-      status: "Live",
-      category: "HealthTech / Mental Wellness",
-      liveUrl: "https://session.relaxy.com.bd/",
-      codeUrl: undefined,
+      links: [{ label: "Visit Relaxy", url: "https://session.relaxy.com.bd/" }],
+      product: {
+        name: "Riri",
+        description:
+          "Relaxy's 24/7 AI therapy assistant. Riri remembers your triggers and patterns, connecting emotions, risks, behaviors, relationships, goals, and coping strategies to personalize support and spot risks before they escalate. She speaks Bangla, Banglish, and Burmese. Her responses are clinician-reviewed, and she augments therapists rather than replacing them. Also the subject of my research, because she deserved peer review.",
+        metrics: [
+          { label: "AI-human conversations", value: "400K+" },
+          { label: "NPS", value: "9.4" },
+          { label: "Always on", value: "24/7" },
+        ],
+        quote: "she is really emotionally intelligent",
+        url: "https://riri.relaxy.com.bd/",
+      },
     },
     {
-      title: "Riri : The AI Therapist",
-      description:
-        "Culturally trained AI companion that understands moods, behaviors, and triggers to deliver instant, personalized clinical therapist–like mental health support.",
-      tech: [
-        "PyTorch + Hugging Face Transformers",
-        "LangChain & LangGraph",
-        "RAG",
-        "FastAPI",
-        "Prometheus",
+      company: "SkillFusion Academy",
+      role: "Product Manager",
+      period: "Dec 2021 – May 2022",
+      location: "Ontario, Canada",
+      aside: "People finished their online courses. I know. I was surprised too.",
+      description: "Training immigrants to land tech jobs in the US and Canada.",
+      highlights: [
+        "Raised course completion by 38% through learner behaviour analysis and product experiments",
+        "Led engineers, designers, and content writers building AI-assisted learning products",
       ],
       metrics: [
-        { label: "NPS Score", value: "9.3" },
-        { label: "Average Engagement/Session", value: "18 hours/week" },
-        { label: "Total Completed Sessions with 0 CAC", value: "18K in 2 months" },
-        { label: "User-reported Performance Satisfaction Score", value: "4X better than ChatGPT" },
-      ],
-      status: "Live",
-      category: "AI / Mental Health",
-      liveUrl: "https://riri.relaxy.com.bd/",
-      codeUrl: undefined,
-    },
-    {
-      title: "Captain Earth : Gamified Soft-skill Building Platform",
-      description:
-        "Educate and train students for building soft skills like leadership, kindness & empathy.",
-      tech: ["React", "Firebase", "Node.js", "Figma"],
-      metrics: [
-        { label: "Partnered with 10+ schools", value: "8,000+ students trained" },
-        { label: "Focus", value: "Behavioral Models (Hooked, Fogg)" },
-        { label: "Innovation Grant Secured", value: "BDT 1M" },
-      ],
-      status: "Pilot",
-      category: "Healthcare / EdTech",
-      liveUrl: "https://www.facebook.com/watch/?v=851713635649307",
-      codeUrl: undefined,
-    },
-
-    {
-      title: "SkillFusion Academy",
-      description: "Trains immigrants to land tech jobs in the US & Canada.",
-      tech: ["Vue.js", "Django", "Redis"],
-      metrics: [
+        { label: "Course completion", value: "+38%" },
         { label: "Consultations", value: "25K+" },
         { label: "Satisfaction", value: "4.9/5" },
-        { label: "Course Completion Lift", value: "+38%" },
       ],
-      status: "Live",
-      category: "EdTech",
-      liveUrl:
-        "https://www.linkedin.com/company/skillfusionacademy/posts/?feedView=all",
-      codeUrl: undefined,
+      links: [
+        {
+          label: "See SkillFusion",
+          url: "https://www.linkedin.com/company/skillfusionacademy/posts/?feedView=all",
+        },
+      ],
     },
-  
     {
-      title: "Bangla Therapy ChatBot",
+      company: "Captain Earth",
+      role: "Head of Product",
+      period: "Sep 2020 – Aug 2021",
+      location: "Dhaka, Bangladesh",
+      aside: "Yes, you can gamify kindness. 8,000+ students are the evidence.",
       description:
-        "A Streamlit-based chatbot that provides therapeutic conversations in Bangla using the Llama-3.2-3B-Instruct model via LM Studio.",
-      tech: ["Python", "PostgreSQL", "LM Studio", "Streamlit"],
-      metrics: [],
-      category: "Healthcare",
-      liveUrl: undefined,
-      codeUrl: "https://github.com/JahnnobiRahman/bangla-therapy-chatbot",
+        "A gamified platform teaching students soft skills like leadership, kindness, and empathy, built on behavioral models (Hooked, Fogg).",
+      highlights: [
+        "Led development of digital platforms addressing youth mental health and behavioral change",
+        "Secured a BDT 1M innovation grant for mental health technology initiatives",
+      ],
+      metrics: [
+        { label: "Students trained", value: "8,000+" },
+        { label: "Partner schools", value: "10+" },
+        { label: "Innovation grant", value: "BDT 1M" },
+      ],
+      links: [
+        { label: "Watch the demo", url: "https://www.facebook.com/watch/?v=851713635649307" },
+      ],
     },
   ];
 
-  const items = showAll ? projects : projects.slice(0, 3);
-
   return (
-    <section id="projects" className="py-24 px-6 bg-background-secondary">
-      <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-display font-bold mb-6">
-            Featured <span className="text-gradient-primary">Projects</span>
-          </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Here are some of the products I've built that have made a real impact.
-            Each represents lessons learned and problems solved.
-          </p>
-        </div>
+    <section id="work" className="py-24 px-6 bg-background-secondary">
+      <div className="max-w-6xl mx-auto">
+        <SectionHeading
+          numeral="II"
+          title="The Work"
+          aside="Every company I've worked at and everything I shipped there, in one place. Consolidation is a sign of maturity."
+        />
 
-        <div className="space-y-8">
-          {items.map((project, index) => (
-            <Card
-              key={index}
-              className="glass-card p-8 hover:scale-[1.02] transition-all duration-300"
-            >
-              <div className="grid lg:grid-cols-3 gap-8">
-                {/* Left: Title + Badges + Description + (Tech + Buttons Row) */}
-                <div className="lg:col-span-2">
-                  <div className="flex items-center gap-3 mb-4">
-                    <h3 className="text-2xl font-display font-semibold">{project.title}</h3>
-                    <Badge className="bg-primary/20 text-primary border-primary/30">
-                      {project.category}
-                    </Badge>
-                    {project.status && (
-                      <Badge
-                        className={`${
-                          project.status === "Live"
-                            ? "bg-green-500/20 text-green-400 border-green-500/30"
-                            : "bg-gold/20 text-gold border-gold/30"
-                        }`}
-                      >
-                        {project.status}
-                      </Badge>
-                    )}
-                  </div>
+        <div className="space-y-16">
+          {work.map((job) => (
+            <article key={job.company} className="grid lg:grid-cols-3 gap-8 border-b border-border pb-16">
+              <div>
+                <p className="eyebrow mb-3">{job.period}</p>
+                <h3 className="text-3xl font-display font-medium mb-1">{job.company}</h3>
+                <p className="text-lg text-primary italic">{job.role}</p>
+                <p className="text-muted-foreground mb-6">{job.location}</p>
 
-                  <p className="text-muted-foreground text-lg leading-relaxed mb-4">
-                    {project.description}
-                  </p>
-
-                  {/* Single compact row: tech chips (left) + CTAs (right) */}
-                  <div className="flex flex-wrap items-center justify-between gap-4">
-                    <div className="flex flex-wrap gap-2">
-                      {project.tech.map((tech, techIndex) => (
-                        <Badge
-                          key={techIndex}
-                          variant="outline"
-                          className="border-card-border"
-                        >
-                          {tech}
-                        </Badge>
-                      ))}
+                <dl className="grid grid-cols-2 gap-4">
+                  {job.metrics.map((metric) => (
+                    <div key={metric.label} className="border-t border-border pt-2">
+                      <dd className="text-2xl font-display">{metric.value}</dd>
+                      <dt className="text-sm text-muted-foreground">{metric.label}</dt>
                     </div>
+                  ))}
+                </dl>
+              </div>
 
-                    <div className="flex gap-3">
-                      {project.liveUrl && (
-                        <Button className="btn-premium rounded-full" asChild>
-                          <a
-                            href={project.liveUrl}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                          >
-                            <ExternalLink className="w-4 h-4 mr-2" />
-                            View Live
-                          </a>
-                        </Button>
-                      )}
-                      {project.codeUrl && (
-                        <Button
-                          variant="outline"
-                          className="rounded-full border-card-border"
-                          asChild
-                        >
-                          <a
-                            href={project.codeUrl}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                          >
-                            <Github className="w-4 h-4 mr-2" />
-                            Code
-                          </a>
-                        </Button>
-                      )}
-                    </div>
-                  </div>
-                </div>
+              <div className="lg:col-span-2">
+                <p className="text-2xl italic mb-4">{job.aside}</p>
+                <p className="text-lg text-muted-foreground mb-4">{job.description}</p>
+                <ul className="list-disc pl-5 space-y-2 text-lg text-muted-foreground mb-6">
+                  {job.highlights.map((highlight) => (
+                    <li key={highlight}>{highlight}</li>
+                  ))}
+                </ul>
 
-                {/* Right: Metrics */}
-                {project.metrics && project.metrics.length > 0 && (
-                  <div className="space-y-4">
-                    <h4 className="font-semibold text-lg mb-4">Key Metrics</h4>
-                    {project.metrics.map((metric, metricIndex) => (
-                      <div key={metricIndex} className="bg-background/50 rounded-lg p-4">
-                        <div className="text-2xl font-bold text-gradient-primary mb-1">
-                          {metric.value}
+                {job.product && (
+                  <div className="glass-card p-6 mb-6">
+                    <h4 className="text-2xl font-display font-medium mb-2">{job.product.name}</h4>
+                    <p className="text-lg text-muted-foreground mb-4">{job.product.description}</p>
+                    <dl className="grid sm:grid-cols-3 gap-4 mb-4">
+                      {job.product.metrics.map((metric) => (
+                        <div key={metric.label} className="border-t border-border pt-2">
+                          <dd className="text-2xl font-display">{metric.value}</dd>
+                          <dt className="text-sm text-muted-foreground">{metric.label}</dt>
                         </div>
-                        <div className="text-sm text-muted-foreground">{metric.label}</div>
-                      </div>
-                    ))}
+                      ))}
+                    </dl>
+                    <p className="text-lg italic mb-4">
+                      “{job.product.quote}” <span className="not-italic text-muted-foreground">— a Riri user</span>
+                    </p>
+                    <a href={job.product.url} target="_blank" rel="noopener noreferrer" className="link-quiet">
+                      Meet Riri <ExternalLink className="inline w-4 h-4" />
+                    </a>
                   </div>
                 )}
+
+                {job.links.map((link) => (
+                  <a
+                    key={link.url}
+                    href={link.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="link-quiet"
+                  >
+                    {link.label} <ExternalLink className="inline w-4 h-4" />
+                  </a>
+                ))}
               </div>
-            </Card>
+            </article>
           ))}
         </div>
 
-        {projects.length > 3 && (
-          <div className="text-center mt-12">
-            <Button
-              className="btn-premium text-lg px-8 py-4 rounded-full"
-              onClick={() => setShowAll(!showAll)}
-            >
-              {showAll ? "Show Less" : "View All Projects"}
-            </Button>
-          </div>
-        )}
+        <p className="text-lg text-muted-foreground mt-10">
+          <span className="eyebrow mr-3">Extracurricular</span>
+          A Bangla therapy chatbot on Llama 3.2, Streamlit, and PostgreSQL, because evenings are for side projects.{" "}
+          <a
+            href="https://github.com/JahnnobiRahman/bangla-therapy-chatbot"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="link-quiet"
+          >
+            Read the code <Github className="inline w-4 h-4" />
+          </a>
+        </p>
       </div>
     </section>
   );

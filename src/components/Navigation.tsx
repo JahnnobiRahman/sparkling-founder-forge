@@ -12,6 +12,14 @@ const Navigation = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const sections = [
+    { id: "about", label: "About" },
+    { id: "work", label: "Work" },
+    { id: "research", label: "Research" },
+    { id: "press", label: "Press" },
+    { id: "learnings", label: "Lessons" },
+  ];
+
   const scrollToSection = (sectionId: string) => {
     document.getElementById(sectionId)?.scrollIntoView({ behavior: "smooth" });
   };
@@ -26,39 +34,21 @@ const Navigation = () => {
     >
       <div className="max-w-7xl mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
-          <div className="text-xl font-display font-semibold text-gradient-primary">
-            Portfolio
+          <div className="text-xl font-display font-medium">
+            J. Rahman
           </div>
           
           <div className="hidden md:flex items-center space-x-8">
-            <button
-              onClick={() => scrollToSection("about")}
-              className="text-muted-foreground hover:text-foreground transition-colors"
-            >
-              About
-            </button>
-            <button
-              onClick={() => scrollToSection("projects")}
-              className="text-muted-foreground hover:text-foreground transition-colors"
-            >
-              Projects
-            </button>
-            <button
-              onClick={() => scrollToSection("experience")}
-              className="text-muted-foreground hover:text-foreground transition-colors"
-            >
-              Experience
-            </button>
-            <button
-              onClick={() => scrollToSection("learnings")}
-              className="text-muted-foreground hover:text-foreground transition-colors"
-            >
-              Learnings
-            </button>
-            <Button
-              onClick={() => scrollToSection("contact")}
-              className="btn-premium rounded-full px-6"
-            >
+            {sections.map((section) => (
+              <button
+                key={section.id}
+                onClick={() => scrollToSection(section.id)}
+                className="text-lg text-muted-foreground hover:text-primary transition-colors"
+              >
+                {section.label}
+              </button>
+            ))}
+            <Button onClick={() => scrollToSection("contact")} className="btn-premium px-6">
               Contact
             </Button>
           </div>

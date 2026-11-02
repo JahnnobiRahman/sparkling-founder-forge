@@ -2,7 +2,8 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Mail, Linkedin, Twitter, Github, MapPin, Calendar } from "lucide-react";
+import { Mail, Linkedin, Github, MapPin, Calendar } from "lucide-react";
+import SectionHeading from "@/components/SectionHeading";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
@@ -69,40 +70,40 @@ const ContactSection = () => {
       icon: Mail,
       title: "Email",
       subtitle: "jahnnobirahman230@gmail.com",
-      description: "Best for detailed discussions and partnerships"
+      href: "mailto:jahnnobirahman230@gmail.com",
+      description: "For partnerships and proper discussions"
     },
     {
       icon: Linkedin,
       title: "LinkedIn",
-      subtitle: "https://www.linkedin.com/in/jahnnobi-rahman/",
-      description: "Let's connect professionally"
+      subtitle: "in/jahnnobi-rahman",
+      href: "https://www.linkedin.com/in/jahnnobi-rahman/",
+      description: "For networking, in its natural habitat"
     },
     {
       icon: Github,
-      title: "Github",
-      subtitle: "https://github.com/JahnnobiRahman",
-      description: "Let's connect professionally"
+      title: "GitHub",
+      subtitle: "JahnnobiRahman",
+      href: "https://github.com/JahnnobiRahman",
+      description: "For proof that I still write code"
     },
     {
       icon: Calendar,
-      title: "Schedule a Call",
-      subtitle: "https://calendly.com/jahnnobi/30min",
-      description: "Book a 30-minute chat"
+      title: "Office Hours",
+      subtitle: "calendly.com/jahnnobi/30min",
+      href: "https://calendly.com/jahnnobi/30min",
+      description: "Thirty minutes. Bring a real question"
     }
   ];
 
   return (
-    <section id="contact" className="py-24 px-6">
-      <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-display font-bold mb-6">
-            Let's <span className="text-gradient-primary">Connect</span>
-          </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Always open to discussing new opportunities, sharing insights, or just having 
-            a conversation about building great products. Reach out!
-          </p>
-        </div>
+    <section id="contact" className="py-24 px-6 bg-background-secondary">
+      <div className="max-w-6xl mx-auto">
+        <SectionHeading
+          numeral="VI"
+          title="Correspondence"
+          aside="Opportunities, ideas, and well-argued disagreements are all welcome. “Quick question” is rarely either."
+        />
 
         <div className="grid lg:grid-cols-2 gap-12">
           {/* Contact Methods */}
@@ -112,16 +113,16 @@ const ContactSection = () => {
               {contactMethods.map((method, index) => (
                 <a 
                   key={index} 
-                  href={method.subtitle} 
+                  href={method.href} 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="block"
                 >
-                  <Card className="glass-card p-6 hover:scale-105 transition-all duration-300 cursor-pointer">
+                  <Card className="glass-card p-6 hover:border-primary transition-colors cursor-pointer">
                     <method.icon className="h-8 w-8 text-primary mb-4" />
                     <h4 className="font-semibold mb-1">{method.title}</h4>
-                    <p className="text-primary text-sm mb-2">{method.subtitle}</p>
-                    <p className="text-xs text-muted-foreground">{method.description}</p>
+                    <p className="text-primary mb-2 break-words">{method.subtitle}</p>
+                    <p className="text-muted-foreground">{method.description}</p>
                   </Card>
                 </a>
               ))}
@@ -133,7 +134,7 @@ const ContactSection = () => {
                 <span className="font-medium">Currently Based</span>
               </div>
               <p className="text-muted-foreground">
-                Dhaka,Bangladesh • Open to remote collaboration worldwide
+                Dhaka, Bangladesh. Open to remote collaboration worldwide, time zones permitting.
               </p>
             </Card>
           </div>
@@ -181,7 +182,7 @@ const ContactSection = () => {
                 <Input 
                   id="subject" 
                   {...register("subject")}
-                  placeholder="What's this about?"
+                  placeholder="Make me curious"
                   className="bg-background/50 border-card-border"
                 />
                 {errors.subject && (
@@ -196,7 +197,7 @@ const ContactSection = () => {
                 <Textarea 
                   id="message" 
                   {...register("message")}
-                  placeholder="Tell me more..."
+                  placeholder="The longer version"
                   rows={5}
                   className="bg-background/50 border-card-border resize-none"
                 />
@@ -208,7 +209,7 @@ const ContactSection = () => {
               <Button 
                 type="submit"
                 disabled={isSubmitting}
-                className="btn-premium w-full text-lg py-3 rounded-full"
+                className="btn-premium w-full text-lg py-3"
               >
                 {isSubmitting ? "Sending..." : "Send Message"}
               </Button>
@@ -219,22 +220,22 @@ const ContactSection = () => {
         {/* Footer */}
         <div className="text-center mt-16 pt-8 border-t border-card-border">
           <p className="text-muted-foreground mb-4">
-            Thanks for visiting my portfolio. Let's build something amazing together.
+            © Jahnnobi Rahman. No machines were harmed. A few were gently asked how they were feeling.
           </p>
           <div className="flex justify-center space-x-6">
             <a href="https://github.com/JahnnobiRahman" target="_blank" rel="noopener noreferrer">
-              <Button variant="ghost" size="icon" className="rounded-full hover:bg-primary/20">
+              <Button variant="ghost" size="icon" className="hover:bg-primary/10">
                 <Github className="h-5 w-5" />
               </Button>
             </a>
             <a href="https://www.linkedin.com/in/jahnnobi-rahman/" target="_blank" rel="noopener noreferrer">
-              <Button variant="ghost" size="icon" className="rounded-full hover:bg-primary/20">
+              <Button variant="ghost" size="icon" className="hover:bg-primary/10">
                 <Linkedin className="h-5 w-5" />
               </Button>
             </a>
             
             <a href="mailto:jahnnobirahman230@gmail.com">
-              <Button variant="ghost" size="icon" className="rounded-full hover:bg-primary/20">
+              <Button variant="ghost" size="icon" className="hover:bg-primary/10">
                 <Mail className="h-5 w-5" />
               </Button>
             </a>
