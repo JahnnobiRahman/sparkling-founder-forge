@@ -42,7 +42,7 @@ const AboutSection = () => {
               our products have on people's daily lives.
             </p>
             <p>
-              These days I lead Relaxy and focus on the strategic and governance foundations needed
+              These days I focus on the strategic and governance foundations needed
               to scale AI responsibly, because “move fast and break things” reads differently when
               the thing is someone's mental health.
             </p>

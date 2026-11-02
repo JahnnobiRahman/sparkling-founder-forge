@@ -7,17 +7,10 @@ const HeroSection = () => {
     document.getElementById(sectionId)?.scrollIntoView({ behavior: "smooth" });
   };
 
-  const stats = [
-    { value: "400K+", label: "users" },
-    { value: "90K+", label: "paying subscribers, the true compliment" },
-    { value: "56M+", label: "young people within reach" },
-    { value: "Q1", label: "journal, peer-reviewed and published" },
-  ];
-
   return (
     <section className="pt-32 pb-20 px-6">
       <div className="max-w-6xl mx-auto">
-        <div className="grid lg:grid-cols-3 gap-12 items-end mb-16">
+        <div className="grid lg:grid-cols-3 gap-12 items-end">
           <div className="lg:col-span-2 fade-in">
             <p className="eyebrow mb-6">CEO of Relaxy · Forbes 30 Under 30 Asia · Dhaka</p>
             <h1 className="text-6xl md:text-8xl font-display font-medium leading-none mb-8">
@@ -73,15 +66,6 @@ const HeroSection = () => {
             </figcaption>
           </figure>
         </div>
-
-        <dl className="grid grid-cols-2 lg:grid-cols-4 gap-6 border-t-2 border-foreground pt-6">
-          {stats.map((stat) => (
-            <div key={stat.value}>
-              <dd className="text-4xl md:text-5xl font-display">{stat.value}</dd>
-              <dt className="text-muted-foreground">{stat.label}</dt>
-            </div>
-          ))}
-        </dl>
       </div>
     </section>
   );

@@ -12,7 +12,6 @@ const ProjectsSection = () => {
       description:
         "An AI-driven mental health platform making care accessible, affordable, and stigma-free for South Asian youth.",
       highlights: [
-        "Built and scaled the platform to 400,000+ users and 90,000+ paid subscribers",
         "Partnered with Grameenphone and Robi, Bangladesh's largest telecom operators, extending access to 56M+ young people",
         "Led expansion into Myanmar and Indonesia, adapting the product, its conversational AI, and go-to-market strategy for each language and culture",
       ],
