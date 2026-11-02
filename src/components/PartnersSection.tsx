@@ -10,7 +10,7 @@ const PartnersSection = () => {
   const backers = [
     { name: "Accelerating Asia", detail: "Investor", logo: acceleratingAsia },
     { name: "Beyond Ventures", detail: "Investor", logo: beyondVentures },
-    { name: "Sajida Foundation", detail: "Pre-seed funding", logo: sajida },
+    { name: "Sajida Foundation", detail: "Investor", logo: sajida },
     { name: "Hossain Md Shahidul Hoque", detail: "Angel investor, bKash", logo: bkash },
     { name: "Rashed Noman", detail: "Angel investor, Country Director at Augmedix", logo: augmedix },
     { name: "Ataur Rahim Chowdhury", detail: "Angel investor, CEO of ShopUp Bangladesh", logo: shopup },
