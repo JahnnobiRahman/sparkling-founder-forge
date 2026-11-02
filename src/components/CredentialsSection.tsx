@@ -81,14 +81,6 @@ const CredentialsSection = () => {
                 Read the paper <ExternalLink className="w-4 h-4 ml-2" />
               </a>
             </Button>
-            <a
-              href="https://doi.org/10.3390/math14213982"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="link-quiet"
-            >
-              doi.org/10.3390/math14213982
-            </a>
           </div>
         </article>
 
