@@ -46,7 +46,7 @@ const LearningsSection = () => {
         "We partnered with Grameenphone & Robi—Bangladesh’s largest telcos to reach new audiences via carrier integrations and co-marketing.",
       category: "GTM / Partnerships",
       impact:
-        "Unlocked access to 50M+ users; adoption grew ~40% and subscribers passed 78K+.",
+        "Extended access to 56M+ young people; adoption grew ~40% and subscribers passed 90K+.",
       details:
         "Playbook: (1) shared goals & success metrics, (2) lightweight billing & identity flows, (3) co-branded education, (4) channel-specific pricing experiments, (5) joint dashboards to keep incentives aligned."
     },
@@ -118,14 +118,14 @@ const LearningsSection = () => {
         "We treated lifecycle like a feature set, not just campaigns: onboarding education, habit loops, and win-back paths.",
       category: "Growth",
       impact:
-        "200K+ users, 78K+ subscribers, and 8.5 NPS supported by consistent lifecycle touchpoints.",
+        "400K+ users, 90K+ subscribers, and 8.5 NPS supported by consistent lifecycle touchpoints.",
       details:
         "Stack: Mixpanel & GA4 for cohorts, Firebase/CleverTap for push/in-app, Mailchimp for email, Canva, Figma for fast A/B creatives. North Star + guardrails to avoid spammy growth."
     }
   ];
 
   return (
-    <section id="learnings" className="py-24 px-6">
+    <section id="learnings" className="py-24 px-6 bg-background-secondary">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-display font-bold mb-6">

@@ -26,14 +26,14 @@ const HeroSection = () => {
           <div className="fade-in fade-in-delay-2 mt-4 md:mt-6 mb-6 flex justify-center">
           <img
             src={me}
-            alt="Me"
+            alt="Jahnnobi Rahman"
             className="h-24 w-24 md:h-28 md:w-28 rounded-full object-cover ring-2 ring-primary/30 shadow-lg"
           />
         </div>
         {/* Forbes badge (subtle, compact) */}
         <div className="fade-in mb-6 flex items-center justify-center">
           <Badge className="btn-gold text-sm md:text-base px-4 md:px-6 py-2 md:py-3 rounded-full font-medium shadow-sm">
-            🏆 Forbes 30 Under 30
+            🏆 Forbes 30 Under 30 Asia
           </Badge>
         </div>
         
@@ -47,7 +47,7 @@ const HeroSection = () => {
         
         {/* Subtitle */}
         <p className="fade-in fade-in-delay-2 text-xl md:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto leading-relaxed">
-          Startup founder passionate about creating products that make a difference. 
+          Founder and AI product leader building mental health products that make a difference.
           Here's my journey of building, learning, and scaling.
         </p>
         

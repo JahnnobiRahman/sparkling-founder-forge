@@ -19,8 +19,8 @@ const ProjectsSection = () => {
         "MongoDB",
       ],
       metrics: [
-        { label: "Users", value: "150K+" },
-        { label: "Subscribers", value: "52K+" },
+        { label: "Users", value: "400K+" },
+        { label: "Paid Subscribers", value: "90K+" },
         { label: "NPS Score", value: "8.5" },
         { label: "Day 01 Retention", value: "82%" },
       ],
@@ -36,6 +36,7 @@ const ProjectsSection = () => {
       tech: [
         "PyTorch + Hugging Face Transformers",
         "LangChain & LangGraph",
+        "RAG",
         "FastAPI",
         "Prometheus",
       ],
@@ -58,6 +59,7 @@ const ProjectsSection = () => {
       metrics: [
         { label: "Partnered with 10+ schools", value: "8,000+ students trained" },
         { label: "Focus", value: "Behavioral Models (Hooked, Fogg)" },
+        { label: "Innovation Grant Secured", value: "BDT 1M" },
       ],
       status: "Pilot",
       category: "Healthcare / EdTech",
@@ -72,6 +74,7 @@ const ProjectsSection = () => {
       metrics: [
         { label: "Consultations", value: "25K+" },
         { label: "Satisfaction", value: "4.9/5" },
+        { label: "Course Completion Lift", value: "+38%" },
       ],
       status: "Live",
       category: "EdTech",

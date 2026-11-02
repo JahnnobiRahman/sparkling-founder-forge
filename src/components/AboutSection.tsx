@@ -4,12 +4,12 @@ const AboutSection = () => {
   const achievements = [
     {
       title: "Forbes 30 Under 30 Asia",
-      description: "Honored in the Social Impact category for mental health innovation",
+      description: "Honored in the 2023 Social Impact category for mental health innovation",
       icon: "🏆"
     },
     {
       title: "Funding & Partnerships",
-      description: "Raised venture funding and partnered with Bangladesh's largest telecom brands to reach 120M+ users",
+      description: "Raised venture funding and partnered with Grameenphone and Robi to extend access to 56M+ young people",
       icon: "💰"
     },
     {
@@ -21,6 +21,16 @@ const AboutSection = () => {
       title: "Global Recognition",
       description: "Represented Bangladesh at UNICEF, One Young World , Accelerating Asia, and MIT Bootcamp as a young founder",
       icon: "🌍"
+    },
+    {
+      title: "Peer-Reviewed Research",
+      description: "EvoRiri paper on diagnosing reward-design failures in a Bangla mental-health assistant, accepted in Mathematics (MDPI)",
+      icon: "📄"
+    },
+    {
+      title: "Ethical AI",
+      description: "Member of Women for Ethical AI's South Asian Chapter, addressing gender bias in AI systems and data",
+      icon: "⚖️"
     }
   ];
 
@@ -56,6 +66,11 @@ const AboutSection = () => {
                 Being recognized as Forbes 30 Under 30 was humbling, but what truly drives me 
                 is the impact our products have on users daily lives and the lessons learned 
                 along the way.
+              </p>
+              <p>
+                Today I lead Relaxy, an AI-driven mental health platform with 400,000+ users
+                and 90,000+ paying subscribers, and I'm focused on the strategic and governance
+                foundations needed to scale AI responsibly.
               </p>
             </div>
           </div>
