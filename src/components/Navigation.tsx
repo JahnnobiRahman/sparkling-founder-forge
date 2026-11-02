@@ -16,6 +16,7 @@ const Navigation = () => {
     { id: "about", label: "About" },
     { id: "work", label: "Work" },
     { id: "research", label: "Research" },
+    { id: "partners", label: "Investors" },
     { id: "press", label: "Press" },
     { id: "learnings", label: "Lessons" },
   ];

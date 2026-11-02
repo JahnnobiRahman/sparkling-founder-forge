@@ -133,10 +133,10 @@ const PressSection = () => {
   ];
 
   return (
-    <section id="press" className="py-24 px-6 bg-background-secondary">
+    <section id="press" className="py-24 px-6">
       <div className="max-w-6xl mx-auto">
         <SectionHeading
-          numeral="IV"
+          numeral="V"
           title="Press & Media"
           aside="The receipts, in case you assumed I made all of this up. Reasonable. I'd check too."
         />

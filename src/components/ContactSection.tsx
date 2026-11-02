@@ -97,10 +97,10 @@ const ContactSection = () => {
   ];
 
   return (
-    <section id="contact" className="py-24 px-6 bg-background-secondary">
+    <section id="contact" className="py-24 px-6">
       <div className="max-w-6xl mx-auto">
         <SectionHeading
-          numeral="VI"
+          numeral="VII"
           title="Correspondence"
           aside="Opportunities, ideas, and well-argued disagreements are all welcome. “Quick question” is rarely either."
         />

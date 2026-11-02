@@ -126,10 +126,10 @@ const LearningsSection = () => {
   ];
 
   return (
-    <section id="learnings" className="py-24 px-6">
+    <section id="learnings" className="py-24 px-6 bg-background-secondary">
       <div className="max-w-6xl mx-auto">
         <SectionHeading
-          numeral="V"
+          numeral="VI"
           title="Lessons Learned"
           aside="Tuition paid in full, mostly in mistakes. You may have these for free."
         />
